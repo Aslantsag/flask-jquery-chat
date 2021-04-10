@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Secret Chat</title>
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+</head>
+<body>
+	<div class="formbox">
+		{% if error %}
+		<div class="alert error">{{error}}</div>
+		{% endif %}
+		{% if success %}
+		<div class="alert success">{{success}}</div>
+		{% endif %}
+		<form action="/join" method="post">
+			<input class="formbox_intext" name="key" placeholder="Enter secret code" required="">
+			<input class="formbox_intext" name="nick" placeholder="Enter nickname" required="">
+			<button class="formbox_btn">Join</button>
+			<a href="/" class="formbox_link">Create channel</a>
+		</form>
+	</div>
+</body>
+</html>

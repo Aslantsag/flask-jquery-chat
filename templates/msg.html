@@ -1,0 +1,15 @@
+{% if messages %}
+    {% for msg in messages %}
+        {% if msg.author == session['author'] %}
+        <div class="chatbox_msg me">
+            <div class="msg_author">{{ msg.author }}</div>
+            <div class="msg_text">{{ msg.msg }}</div>
+        </div>
+        {% else %}
+        <div class="chatbox_msg">
+            <div class="msg_author">{{ msg.author }}</div>
+            <div class="msg_text">{{ msg.msg }}</div>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
